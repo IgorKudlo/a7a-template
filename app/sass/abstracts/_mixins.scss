@@ -1,0 +1,126 @@
+// px to rem
+@function rem($px, $base: 16px) {
+    @return $px / $base + 0rem;
+}
+
+// px to em
+@function em($px, $base: 16px) {
+    @return $px / $base + 0em;
+}
+
+@mixin list-reset {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+@mixin links-all {
+    &:link,
+    &:visited,
+    &:focus,
+    &:hover {
+        @content;
+    }
+}
+
+
+@mixin clearfix {
+    &:after {
+        content: "";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+}
+
+
+// @include font("NameFont", "path");
+@mixin fonts($alias, $name, $weight:normal, $style:normal) {
+    @font-face {
+        font-family: $alias;
+        src: url("../fonts/" + $name + ".woff2") format("woff2"),
+        url("../fonts/" + $name + ".woff") format("woff");
+        font-weight: $weight;
+        font-style: $style;
+        font-display: swap;
+    }
+}
+
+
+//1440*900
+@mixin desktop {
+    @media (max-width: 1440px) {
+        @content;
+    }
+}
+
+//1366*768
+@mixin laptop-wide {
+    @media (max-width: 1366px) {
+        @content;
+    }
+}
+
+//1024*768
+@mixin laptop {
+    @media (max-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin tablet-small {
+    @media (max-width: 640px) {
+        @content;
+    }
+}
+
+@mixin phone-large {
+    @media (max-width: 540px) {
+        @content;
+    }
+}
+
+@mixin phone-middle {
+    @media (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media (max-width: 375px) {
+        @content;
+    }
+}
+
+@mixin phone-small {
+    @media (max-width: 320px) {
+        @content;
+    }
+}
+
+
+// transition
+@mixin transition($transition-property: all) {
+    transition: $transition-property $transition-time $transition-effect;
+}
+
+
+// Вставка иконок png из спрайта
+// @extend .icon-name;
+
+
+// svg
+@mixin svg-icon($icon-file-name, $icon-size-width, $icon-size-height) {    
+    width: $icon-size-width;
+    height: $icon-size-height;
+    background-size: $icon-size-width $icon-size-height;    
+    background-image: url("#{$img-dir-path}icons-svg/#{$icon-file-name}");
+}

@@ -1,0 +1,70 @@
+/* form */
+body {
+    input, textarea {
+        outline: none;
+        @include transition();
+
+        &:required:valid {
+            border-color: $color-accent;
+        }
+
+        &:focus:required:invalid {
+            border-color: $color-red;
+        }
+    }
+}
+
+
+.form {
+    position: relative;
+
+    &__popup {
+        position: relative;
+        max-width: 400px;
+        margin: rem(40px) auto;
+        padding: rem(20px) rem(30px);
+        background: #fff;
+    }
+
+    &__title {
+        margin-bottom: rem(18px);
+        text-align: center;
+    }
+
+    &__box {
+        margin-bottom: 15px;
+    }
+
+    &__input {
+        display: block;
+        padding: 0 rem(15px);
+        width: 100%;
+        height: rem(40px);
+        line-height: rem(40px);
+        border: rem(2px) solid #000;
+    }
+
+    &__send {
+        text-align: center;
+    }
+
+    &__success {
+        display: none;
+        position: absolute;
+        align-items: center;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        padding: rem(30px);
+        max-width: rem(400px);
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        background-color: #fff;
+        text-transform: uppercase;
+
+        &_visible {
+            display: flex;
+        }
+    }
+}

@@ -13,6 +13,8 @@ const gulp         = require('gulp'),
 	  imagemin     = require('gulp-imagemin'),
 	  imageminJpegRecompress     = require('imagemin-jpeg-recompress'),
 	  pngquant  	 = require('imagemin-pngquant'),
+	  webp = require("imagemin-webp"),
+	  extReplace = require("gulp-ext-replace"),
 	  spritesmith  = require('gulp.spritesmith'),
 	  svgSprite    = require('gulp-svg-sprite'),
 	  svgmin       = require('gulp-svgmin'),
@@ -91,6 +93,19 @@ gulp.task('img', function () {
 });
 
 
+// convert webp
+gulp.task("exportWebP", function() {
+	return gulp.src('app/img/**/*.{png,jpg}')
+		.pipe(imagemin([
+			webp({
+				quality: 75
+			})
+		]))
+		.pipe(extReplace(".webp"))
+		.pipe(gulp.dest('app/img'));
+});
+
+
 // Sprite png
 gulp.task('sprite', function () {
 	var spriteData = gulp.src('app/img/icons/*.png').pipe(spritesmith({
@@ -164,7 +179,7 @@ gulp.task('watch', function() {
 	gulp.watch('app/sass/**/*.scss', gulp.parallel('styles'));
 	gulp.watch(['libs/**/*.js', 'app/js/_custom.js'], gulp.parallel('scripts'));
 	gulp.watch('app/*.html', gulp.parallel('code'));
-	gulp.watch('app/_src-img/**/*', gulp.parallel('img'));
+	gulp.watch('app/_src-img/**/*', gulp.series('img', 'exportWebP'));
 });
 
 gulp.task('default', gulp.parallel('img', 'styles', 'scripts', 'browser-sync', 'watch'));

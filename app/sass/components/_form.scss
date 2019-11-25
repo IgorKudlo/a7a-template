@@ -1,4 +1,3 @@
-/* form */
 body {
     input, textarea {
         outline: none;
@@ -20,7 +19,7 @@ body {
 
     &__popup {
         position: relative;
-        max-width: 400px;
+        max-width: rem(400px);
         margin: rem(40px) auto;
         padding: rem(20px) rem(30px);
         background: #fff;
@@ -32,7 +31,7 @@ body {
     }
 
     &__box {
-        margin-bottom: 15px;
+        margin-bottom: rem(15px);
     }
 
     &__input {
@@ -41,7 +40,7 @@ body {
         width: 100%;
         height: rem(40px);
         line-height: rem(40px);
-        border: rem(2px) solid #000;
+        border: 2px solid #000;
     }
 
     &__send {

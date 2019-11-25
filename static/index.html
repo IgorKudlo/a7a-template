@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<title>Title</title>
+
+	<meta name="theme-color" content="#000000">
+	<meta name="apple-mobile-web-app-status-bar-style" content="#000000">
+	
+	<link rel="stylesheet" href="css/styles.min.css">
+</head>
+
+<body>
+
+	<!-- <svg class="icon-svg icon-instagram"><use xlink:href="images/sprite.svg#instagram"></use></svg> -->
+
+	<!--<picture>
+		<source media="(min-width: 600px)" type="image/webp" srcset="img/xxx.webp">
+		<source media="(min-width: 600px)" type="image/jpeg" srcset="img/xxx.jpg">
+		<source media="(min-width: 400px)" type="image/webp" srcset="img/xxx2.webp">
+		<source media="(min-width: 400px)" type="image/jpeg" srcset="img/xxx2.jpg">
+		<img src="img/xxx.jpg" alt="">
+	</picture>-->
+
+	<!-- BEGIN layout -->
+	<div class="layout">
+
+		<!-- BEGIN layout__top -->
+		<div class="layout__top">
+
+			<!-- BEGIN header -->
+			<header class="header">
+				<div class="container">
+					Шапка
+				</div>
+			</header>
+			<!-- END header -->
+
+			<!-- BEGIN content -->
+			<main class="content">
+
+			</main>
+			<!-- END content -->
+
+		</div>
+		<!-- END layout__top -->
+
+		<!-- BEGIN layout__bottom -->
+		<div class="layout__bottom">
+
+			<!-- BEGIN footer -->
+			<footer class="footer">
+				<div class="container">
+					Подвал
+				</div>
+			</footer>
+			<!-- END footer -->
+
+		</div>
+		<!-- END layout__bottom -->
+
+	</div>
+	<!-- END layout -->
+
+
+	<div class="hide">
+
+		<form class="form form__popup zoom-anim-dialog" id="callback">
+			<div class="form__success">Спасибо за заявку! <br> Наши менеджеры связужьтся с Вами в ближайшее время.</div>
+			<input type="hidden" name="admin-data">
+			<h3 class="form__title">Заказать звонок</h3>
+			<div class="form__box">
+				<label for="input-name" class="form__label">Ваше имя:</label>
+				<input type="text" class="form__input" id="input-name" name="name" placeholder="Введите Ваше Имя ...">
+			</div>
+			<div class="form__box">
+				<label for="input-phone" class="form__label">Ваш телефон:</label>
+				<input type="text" class="form__input" id="input-phone" name="phone" placeholder="Введите Ваш Телефон ..."
+					   required>
+			</div>
+			<div class="form__send">
+				<button class="btn" type="submit">Отправить</button>
+			</div>
+		</form>
+
+	</div>
+
+	<script src="js/scripts.min.js"></script>
+</body>
+</html>

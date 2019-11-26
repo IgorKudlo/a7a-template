@@ -65,12 +65,19 @@ gulp.task('styles', function() {
 	.pipe(browserSync.stream())
 });
 
+// For library without scss
+gulp.task('libCSS', function() {
+	return gulp.src(['app/css/styles.min.css', './node_modules/@fancyapps/fancybox/dist/jquery.fancybox.css'])
+		.pipe(concat('styles.min.css'))
+		.pipe(gulp.dest('app/css'))
+});
+
 // Scripts & JS Libraries
 gulp.task('scripts', function() {
 	return gulp.src([
 		'app/js/_lazy.js',
 		'node_modules/jquery/dist/jquery.min.js',
-		'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
+		'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js',
 		'node_modules/slick-carousel/slick/slick.js',
 		'app/js/_custom.js' // Custom scripts. Always at the end
 		])
@@ -161,7 +168,7 @@ gulp.task('clean', function() {
 });
 
 // Build production version
-gulp.task('build', gulp.series('clean', gulp.parallel('img', 'styles', 'scripts'), () => {
+gulp.task('build', gulp.series('clean', 'img', 'styles', 'libCSS', 'scripts', function createDirectoryProduction() {
 	return gulp
 		.src([
 			'app/css/**/*',
@@ -176,10 +183,10 @@ gulp.task('build', gulp.series('clean', gulp.parallel('img', 'styles', 'scripts'
 
 
 gulp.task('watch', function() {
-	gulp.watch('app/sass/**/*.scss', gulp.parallel('styles'));
+	gulp.watch('app/sass/**/*.scss', gulp.series('styles', 'libCSS'));
 	gulp.watch(['libs/**/*.js', 'app/js/_custom.js'], gulp.parallel('scripts'));
 	gulp.watch('app/*.html', gulp.parallel('code'));
 	gulp.watch('app/_src-img/**/*', gulp.series('img', 'exportWebP'));
 });
 
-gulp.task('default', gulp.parallel('img', 'styles', 'scripts', 'browser-sync', 'watch'));
+gulp.task('default', gulp.parallel('img', 'styles', 'libCSS', 'scripts', 'browser-sync', 'watch'));

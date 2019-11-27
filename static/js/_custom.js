@@ -3,9 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
     /**
      * fancybox
      */
-    $('.modal').fancybox({
-
-    });
+    $('.modal').fancybox();
 
 
     /**
@@ -42,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
             setTimeout(function () {
                 th.trigger('reset');
                 $(afterTxt).removeClass('form__success_visible');
-                $.magnificPopup.close();
+                $.fancybox.close();
             }, 3000);
         });
         return false;

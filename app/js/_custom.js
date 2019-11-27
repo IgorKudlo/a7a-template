@@ -3,9 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
     /**
      * fancybox
      */
-    $('.modal').fancybox({
-
-    });
+    $('.modal').fancybox();
 
 
     /**

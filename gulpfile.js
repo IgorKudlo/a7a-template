@@ -68,7 +68,6 @@ gulp.task('styles', function() {
 // Scripts & JS Libraries
 gulp.task('scripts', function() {
 	return gulp.src([
-		'app/js/_lazy.js',
 		'node_modules/jquery/dist/jquery.min.js',
 		'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
 		'node_modules/slick-carousel/slick/slick.js',

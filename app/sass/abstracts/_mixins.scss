@@ -1,131 +1,131 @@
 // px to rem
 @function rem($px, $base: 16px) {
-    @return $px / $base + 0rem;
+  @return $px / $base + 0rem;
 }
 
 // px to em
 @function em($px, $base: 16px) {
-    @return $px / $base + 0em;
+  @return $px / $base + 0em;
 }
 
 @mixin list-reset {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 
 @mixin links-all {
-    &:link,
-    &:visited,
-    &:focus,
-    &:hover {
-        @content;
-    }
+  &:link,
+  &:visited,
+  &:focus,
+  &:hover {
+      @content;
+  }
 }
 
 
 @mixin clearfix {
-    &:after {
-        content: "";
-        display: block;
-        height: 0;
-        clear: both;
-        visibility: hidden;
-    }
+  &:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden;
+  }
 }
 
 
 // @include font("NameFont", "path");
 @mixin fonts($alias, $name, $weight:normal, $style:normal) {
-    @font-face {
-        font-family: $alias;
-        src: url("../fonts/" + $name + ".woff2") format("woff2"),
-        url("../fonts/" + $name + ".woff") format("woff");
-        font-weight: $weight;
-        font-style: $style;
-        font-display: swap;
-    }
+  @font-face {
+      font-family: $alias;
+      src: url("../fonts/" + $name + ".woff2") format("woff2"),
+      url("../fonts/" + $name + ".woff") format("woff");
+      font-weight: $weight;
+      font-style: $style;
+      font-display: swap;
+  }
 }
 
 // usage @include imgRetina(logo, png, 100px, 40px);
 @mixin imgRetina($image, $extension, $width, $height) {
-    background: url($image + '.' + $extension) no-repeat;
-    width: $width;
-    height: $height;
+  background: url($image + '.' + $extension) no-repeat;
+  width: $width;
+  height: $height;
 
-    @media (min--moz-device-pixel-ratio: 1.3),
-    (-o-min-device-pixel-ratio: 2.6/2),
-    (-webkit-min-device-pixel-ratio: 1.3),
-    (min-device-pixel-ratio: 1.3),
-    (min-resolution: 1.3dppx) {
-        background-image: url($image + '-2x' + '.' + $extension) no-repeat;
-        background-size: $width $height;
-    }
+  @media (min--moz-device-pixel-ratio: 1.3),
+  (-o-min-device-pixel-ratio: 2.6/2),
+  (-webkit-min-device-pixel-ratio: 1.3),
+  (min-device-pixel-ratio: 1.3),
+  (min-resolution: 1.3dppx) {
+      background-image: url($image + '-2x' + '.' + $extension) no-repeat;
+      background-size: $width $height;
+  }
 }
 
 
 //1440*900
 @mixin desktop {
-    @media (max-width: 1440px) {
-        @content;
-    }
+  @media (max-width: 1440px) {
+      @content;
+  }
 }
 
 //1366*768
 @mixin laptop-wide {
-    @media (max-width: 1366px) {
-        @content;
-    }
+  @media (max-width: 1366px) {
+      @content;
+  }
 }
 
 //1024*768
 @mixin laptop {
-    @media (max-width: 1024px) {
-        @content;
-    }
+  @media (max-width: 1024px) {
+      @content;
+  }
 }
 
 @mixin tablet {
-    @media (max-width: 768px) {
-        @content;
-    }
+  @media (max-width: 768px) {
+      @content;
+  }
 }
 
 @mixin tablet-small {
-    @media (max-width: 640px) {
-        @content;
-    }
+  @media (max-width: 640px) {
+      @content;
+  }
 }
 
 @mixin phone-large {
-    @media (max-width: 540px) {
-        @content;
-    }
+  @media (max-width: 540px) {
+      @content;
+  }
 }
 
 @mixin phone-middle {
-    @media (max-width: 480px) {
-        @content;
-    }
+  @media (max-width: 480px) {
+      @content;
+  }
 }
 
 @mixin phone {
-    @media (max-width: 375px) {
-        @content;
-    }
+  @media (max-width: 375px) {
+      @content;
+  }
 }
 
 @mixin phone-small {
-    @media (max-width: 320px) {
-        @content;
-    }
+  @media (max-width: 320px) {
+      @content;
+  }
 }
 
 
 // transition
 @mixin transition($transition-property: all) {
-    transition: $transition-property $transition-time $transition-effect;
+  transition: $transition-property $transition-time $transition-effect;
 }
 
 
@@ -134,9 +134,9 @@
 
 
 // svg
-@mixin svg-icon($icon-file-name, $icon-size-width, $icon-size-height) {    
-    width: $icon-size-width;
-    height: $icon-size-height;
-    background-size: $icon-size-width $icon-size-height;    
-    background-image: url("#{$img-dir-path}icons-svg/#{$icon-file-name}");
+@mixin svg-icon($icon-file-name, $icon-size-width, $icon-size-height) {
+  width: $icon-size-width;
+  height: $icon-size-height;
+  background-size: $icon-size-width $icon-size-height;
+  background-image: url("#{$img-dir-path}icons-svg/#{$icon-file-name}");
 }

@@ -18,46 +18,46 @@
 
 b,
 strong {
-    font-weight: $font-weight-bold;
+  font-weight: $font-weight-bold;
 }
 
 a {
-    color: $link-color;
-    -webkit-tap-highlight-color: transparent;
-    @include transition(color);
+  color: $link-color;
+  -webkit-tap-highlight-color: transparent;
+  @include transition(color);
 }
 
 p {
-    margin: 1rem 0;
+  margin: 1rem 0;
 }
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-    margin: .5rem 0;
-    line-height: $line-height-sm;
-    font-weight: $font-weight-regular;
+  margin: .5rem 0;
+  line-height: $line-height-sm;
+  font-weight: $font-weight-regular;
 }
 
 h1, .h1 {
-    font-size: rem(36px);
+  font-size: rem(36px);
 }
 
 h2, .h2 {
-    font-size: rem(32px);
+  font-size: rem(32px);
 }
 
 h3, .h3 {
-    font-size: rem(28px);
+  font-size: rem(28px);
 }
 
 h4, .h4 {
-    font-size: rem(24px);
+  font-size: rem(24px);
 }
 
 h5, .h5 {
-    font-size: rem(18px);
+  font-size: rem(18px);
 }
 
 h6, .h6 {
-    font-size: rem(16px);
+  font-size: rem(16px);
 }

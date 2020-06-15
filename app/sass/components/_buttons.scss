@@ -1,30 +1,30 @@
 .btn {
-    position: relative;
-    display: inline-block;
-    padding: rem(9px) rem(15px);
-    font-weight: $font-weight-regular;
-    line-height: $line-height-sm;
-    font-size: rem(16px);
-    color: $color-black;
-    background-color: transparent;
-    border: 1px solid $color-accent;
-    border-radius: rem(4px);
-    text-align: center;
-    vertical-align: middle;
-    cursor: pointer;
-    @include transition();
+  position: relative;
+  display: inline-block;
+  padding: rem(9px) rem(15px);
+  font-weight: $font-weight-regular;
+  line-height: $line-height-sm;
+  font-size: rem(16px);
+  color: $color-black;
+  background-color: transparent;
+  border: 1px solid $color-accent;
+  border-radius: rem(4px);
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  @include transition();
 
-    &:focus,
-    &:hover {
-        color: #000;
-        text-decoration: none;
-    }
+  &:focus,
+  &:hover {
+    color: #000;
+    text-decoration: none;
+  }
 
-    &:hover {
-        background-color: lighten($color-accent, 5%)
-    }
+  &:hover {
+    background-color: lighten($color-accent, 5%)
+  }
 
-    &:active {
-        background-color: darken($color-accent, 5%)
-    }
+  &:active {
+    background-color: darken($color-accent, 5%)
+  }
 }

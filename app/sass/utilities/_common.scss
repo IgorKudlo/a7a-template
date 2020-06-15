@@ -1,35 +1,34 @@
 .align-l {
-    text-align: left;
+  text-align: left;
 }
 .align-c {
-    text-align: center;
+  text-align: center;
 }
 .align-r {
-    text-align: center;
+  text-align: center;
 }
 
 
 .float-l {
-    float: left;
+  float: left;
 }
 .float-r {
-    float: right;
+  float: right;
 }
 
 
 .img-responsive {
-    display: block;
-    max-width: 100%;
-    height: auto;
+  display: block;
+  max-width: 100%;
+  height: auto;
 
-    &.img-width {
-        width: 100%;
-    }
+  &.img-width {
+    width: 100%;
+  }
 }
 
 
 .ov-scroll {
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
-
